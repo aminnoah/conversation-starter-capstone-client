@@ -9,9 +9,9 @@ const conversationStarters = [
     ok_for_technology: true,
     ok_for_fashion: true,
     ok_for_holidays: true,
-    ok_for_education: true
+    ok_for_education: true,
     ok_for_work:true,
-    ok_for_food:truee,
+    ok_for_food:true,
     ok_for_leisure: true
   },
   {
@@ -26,7 +26,7 @@ const conversationStarters = [
     ok_for_holidays: true,
     ok_for_education: true,
     ok_for_work:true,
-    ok_for_food:truee,
+    ok_for_food:true,
     ok_for_leisure: true
   },
   {
@@ -35,10 +35,10 @@ const conversationStarters = [
     min_number_of_people: 1,
     ok_for_entertainment: true,
     ok_for_exercise: true,
-    ok_for_travel: true
-    ok_for_technology: true
+    ok_for_travel: true,
+    ok_for_technology: true,
     ok_for_fashion:true,
-    ok_for_holidays:truee,
+    ok_for_holidays:true,
     ok_for_education:true,
     ok_for_work:true,
     ok_for_food:true,
@@ -54,7 +54,7 @@ const conversationStarters = [
     ok_for_technology: true,
     ok_for_fashion: true,
     ok_for_holidays: true,
-    ok_for_education: true
+    ok_for_education: true,
     ok_for_work:true,
     ok_for_food:true,
     ok_for_leisure: true
@@ -65,13 +65,13 @@ const conversationStarters = [
     min_number_of_people: 1,
     ok_for_entertainment: true,
     ok_for_exercise: true,
-    ok_for_travel: true
+    ok_for_travel: true,
     ok_for_technology: true,
     ok_for_fashion: true,
-    ok_for_holidays: true
+    ok_for_holidays: true,
     ok_for_education: true,
     ok_for_work:true,
-    ok_for_food:truee,
+    ok_for_food:true,
     ok_for_leisure: true
   },
   {
@@ -95,10 +95,10 @@ const conversationStarters = [
     min_number_of_people: 1,
     ok_for_entertainment: true,
     ok_for_exercise: false,
-    ok_for_travel: true
+    ok_for_travel: true,
     ok_for_technology: true,
     ok_for_fashion: true,
-    ok_for_holidays: true
+    ok_for_holidays: true,
     ok_for_education: true,
     ok_for_work:true,
     ok_for_food:true,
@@ -110,13 +110,13 @@ const conversationStarters = [
     min_number_of_people: 1,
     ok_for_entertainment: true,
     ok_for_exercise: false,
-    ok_for_travel: true
+    ok_for_travel: true,
     ok_for_technology: true,
     ok_for_fashion: true,
-    ok_for_holidays: true
+    ok_for_holidays: true,
     ok_for_education: true,
     ok_for_work: true,
-    ok_for_food: true
+    ok_for_food: true,
     ok_for_leisure: true
   },
   {
@@ -125,13 +125,13 @@ const conversationStarters = [
     min_number_of_people: 1,
     ok_for_entertainment: true,
     ok_for_exercise: false,
-    ok_for_travel: true
-    ok_for_technology: true
+    ok_for_travel: true,
+    ok_for_technology: true,
     ok_for_fashion: true,
-    ok_for_holidays: true
-    ok_for_education: true
+    ok_for_holidays: true,
+    ok_for_education: true,
     ok_for_work:true,
-    ok_for_food:truee,
+    ok_for_food:true,
     ok_for_leisure: true
   },
   {
@@ -140,13 +140,13 @@ const conversationStarters = [
     min_number_of_people: 1,
     ok_for_entertainment: true,
     ok_for_exercise: false,
-    ok_for_travel: true
+    ok_for_travel: true,
     ok_for_technology: true,
     ok_for_fashion: true,
-    ok_for_holidays: true
+    ok_for_holidays: true,
     ok_for_education: true,
     ok_for_work:true,
-    ok_for_food:truee,
+    ok_for_food:true,
     ok_for_leisure: true
   },
   {
@@ -155,10 +155,10 @@ const conversationStarters = [
     min_number_of_people: 1,
     ok_for_entertainment: true,
     ok_for_exercise: false,
-    ok_for_travel: true
+    ok_for_travel: true,
     ok_for_technology: true,
     ok_for_fashion: true,
-    ok_for_holidays: true
+    ok_for_holidays: true,
     ok_for_education: true,
     ok_for_work:true,
     ok_for_food:true,
@@ -170,7 +170,7 @@ const conversationStarters = [
     min_number_of_people: 1,
     ok_for_entertainment: true,
     ok_for_exercise: false,
-    ok_for_travel: true
+    ok_for_travel: true,
     ok_for_technology: true,
     ok_for_fashion: true,
     ok_for_holidays: true,
@@ -191,7 +191,7 @@ const conversationStarters = [
     ok_for_holidays: true,
     ok_for_education: true
     ok_for_work:true,
-    ok_for_food:truee,
+    ok_for_food:true,
     ok_for_leisure: true
   },
   {
@@ -201,12 +201,12 @@ const conversationStarters = [
     ok_for_entertainment: true,
     ok_for_exercise: false,
     ok_for_travel: true,
-    ok_for_technology: true
+    ok_for_technology: true,
     ok_for_fashion: true,
     ok_for_holidays: true,
-    ok_for_education: true
+    ok_for_education: true,
     ok_for_work:true,
-    ok_for_food:truee,
+    ok_for_food:true,
     ok_for_leisure: true
   },
   {
@@ -215,13 +215,13 @@ const conversationStarters = [
     min_number_of_people: 1,
     ok_for_entertainment: true,
     ok_for_exercise: true,
-    ok_for_travel: true
-    ok_for_technology: true
+    ok_for_travel: true,
+    ok_for_technology: true,
     ok_for_fashion:true,
     ok_for_holidays:true,
-    ok_for_education:truee,
+    ok_for_education:true,
     ok_for_work: true,
-    ok_for_food: true
+    ok_for_food: true,
     ok_for_leisure: true
   },
   {
@@ -233,8 +233,8 @@ const conversationStarters = [
     ok_for_travel: true,
     ok_for_technology: true,
     ok_for_fashion:true,
-    ok_for_holidays:truee,
-    ok_for_education:truee,
+    ok_for_holidays:true,
+    ok_for_education:true,
     ok_for_work: true,
     ok_for_food: true,
     ok_for_leisure: true
@@ -248,8 +248,8 @@ const conversationStarters = [
     ok_for_travel: true,
     ok_for_technology: true,
     ok_for_fashion:true,
-    ok_for_holidays:truee,
-    ok_for_education:truee,
+    ok_for_holidays: true,
+    ok_for_education: true,
     ok_for_work: true,
     ok_for_food: true,
     ok_for_leisure: true
@@ -260,13 +260,13 @@ const conversationStarters = [
     min_number_of_people: 1,
     ok_for_entertainment: true,
     ok_for_exercise: true,
-    ok_for_travel: true
-    ok_for_technology: true
+    ok_for_travel: true,
+    ok_for_technology: true,
     ok_for_fashion:true,
-    ok_for_holidays:truee,
+    ok_for_holidays:true,
     ok_for_education:true,
     ok_for_work:true,
-    ok_for_food:truee,
+    ok_for_food:true,
     ok_for_leisure: true
   },
   {
@@ -331,7 +331,7 @@ const conversationStarters = [
   },
   {
     id: 23,
-    question: "Do you prefer four season or one season year round?",
+    question: "Do you prefer four seasons or one season year round?",
     min_number_of_people: 1,
     ok_for_entertainment: false,
     ok_for_exercise: false,
@@ -586,7 +586,7 @@ const conversationStarters = [
   },
   {
     id: 40,
-    question: "What's worth spending more on the get the best?",
+    question: "What's worth spending more on to get the best?",
     min_number_of_people: 1,
     ok_for_entertainment: true,
     ok_for_exercise: true,
@@ -631,7 +631,7 @@ const conversationStarters = [
   },
   {
     id: 43,
-    question: "What could you give a 40 minute presentation on with 0 prepeation?",
+    question: "What could you give a 40 minute presentation on with 0 preperation?",
     min_number_of_people: 1,
     ok_for_entertainment: true,
     ok_for_exercise: true,

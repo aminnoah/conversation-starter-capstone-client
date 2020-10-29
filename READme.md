@@ -1,22 +1,52 @@
-# Capstone Project Title (to do now)
-One line description of what this app is doing and who is it for
+# Convo-To-Go-App (done)
+This application helps users to prepare and initiate conversations in a wide variety of settings. It provides the user with a set list of events or environments, and based on their input, they will receive a number of relevant questions and conversation starters. New users or visitors will have the ability to access the pre-existing conversation starters. Upon log in, users can input suggestions for new questions and events.
 
 ## 1. Working Prototype (to do later)
-(Example) You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://your-app-server.herokuapp.com/
+(Example) You can access a working prototype of the React app here: https://my-app-client.herokuapp.com/ and Node app here: https://my-app-server.herokuapp.com/
 
 
-## 2. User Stories (to do now)
+## 2. User Stories (done)
 This app is for two types of users: a visitor and a logged-in user
 
-#### (Example) Landing Page
-* as a visitor
-* I want to understand what I can do with this app (or sign up, or log in)
-* so I can decide if I want to use it
+Landing
+
+#### Landing Page
+* As a visitor
+* I want to understand what I can do with this app (read about, sign up, or log in),
+* so I can decide if I want to use it.
+
+#### Login Page
+* As a returning register user
+* I want to enter my password and username to use this app,
+* so I can have access to my account.
+
+#### Sign Up
+* As a visitor 
+* I want to register to use this app
+* so I can create my own conversation starters.
+
+#### Home Page 
+* As a logged-in user,
+* I want to be able to preview the content of the app,
+* so I can start looking conversation starters.
+
+#### Question Category Page
+* As a logged-in user,
+* I want to be able to select a category,
+* so I can view the corresponding conversation starters.
+
+#### Suggestion Page
+* As a logged-in user,
+* I want to suggest new events and/or initiaters,
+* so that I can access those suggestions.
 
 
 ## 3. Functionality (to do now)
 The app's functionality includes:
-* (Example) Every User has the ability to create an account
+* Every User has the ability to create an account
+* Every User has the ability to search for 
+
+
 
 ## 4. Technology (done)
 * Front-End: HTML5, CSS3, JavaScript ES6, React
