@@ -8,7 +8,7 @@ This application helps users to prepare and initiate conversations in a wide var
 ## 2. User Stories (done)
 This app is for two types of users: a visitor and a logged-in user
 
-Landing
+
 
 #### Landing Page
 * As a visitor

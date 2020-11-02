@@ -1,0 +1,18 @@
+nav {
+  display: flex;
+
+  
+}
+
+nav li {
+  list-style: none;
+  display: inline;
+  padding: 10px;
+}
+
+form {
+  display: inline-flex;
+  flex-direction: column;
+  width: 20%;
+  white-space: nowrap;
+}
