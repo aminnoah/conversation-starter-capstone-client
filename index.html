@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="index.css" rel="stylesheet">
+  <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Pacifico&family=Roboto&family=Sriracha&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3075e528fd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <main>
+    <section class="landing-page">
+     <h1>Welcome to Convo-To-Go
+       <br>
+       Let's converse!
+      </h1>
+      <button class="myButton">Log In</button><button class="myButton">Sign up</button>
+    </section>
+
+    <section class="sign-up">
+
+            <div class="alert alert-success">
+                <i class="fas fa-check"></i> <strong>Success</strong> Account Created Sucessfully!
+            </div>
+
+            <div class="alert alert-warning">
+                <i class="fas fa-exclamation"></i> <strong>Warning</strong> Password does not meet requirements!
+            </div>
+
+            <div class="alert alert-failure">
+                <i class="fas fa-times"></i> <strong>Failure</strong> Sign-up Failed! Please see System
+                Adminstrator!
+            </div>
+
+            <form class="sign-up-form">
+                <h1>Convo-To-Go
+                  <br>
+                  Sign-Up
+                </h1>
+                <div class="form-item">
+                    <label for="register-email">Email</label>
+                    <input type="text" placeholder="email" required="" id="register-email" />
+                </div>
+                <div class="form-item">
+                    <label for="register-password">Password</label>
+                    <input type="text" placeholder="password" required="" id="register-password" />
+                </div>
+                <div class="form-item">
+                    <label for="register-confirm-password">Confirm Password</label>
+                    <input type="text" placeholder="confirm-password" required="" id="register-confirm-password" />
+                </div>
+                <div class="form-item">
+                    <a href="#" class="myButton">Register</a>
+                    <p>Already have an account? <a href="#">Log In</a></p>
+                </div>
+            </form>
+        </section>
+
+        <section class="log-in">
+            <div class="alert alert-info">
+                <i class="fas fa-info"></i> <strong>Info</strong> Please enter username and password!
+            </div>
+
+            <div class="alert alert-warning">
+                <i class="fas fa-exclamation"></i> <strong>Warning</strong> Username or password is incorrect!!
+            </div>
+
+            <form class="log-in-form">
+                <h1>Convo-To-Go
+                  <br>
+                  Log In
+                </h1>
+                
+
+                <div class="form-item">
+                    <label for="sign-in-email">Email</label>
+                    <input type="text" placeholder="email" required="" id="sign-in-email" />
+                </div>
+                <div class="form-item">
+                    <label for="sign-in-password">Password</label>
+                    <input type="text" placeholder="password" required="" id="sign-in-password" />
+                </div>
+                <div class="form-item">
+                    <a href="#" class="myButton">Log-In</a>
+                    <p>Don't have an account?<a href="#">Sign-Up</a></p>
+                </div>
+            </form>
+        </section>
+        <section class="homepage">
+          <nav class="nav-bar">
+            <h3 class="convo-logo">Convo-To-Go</h3>
+            <ul class="nav-links">
+              <li>Home</li>
+              <li>About</li>
+              <li>Contact</li>
+            </ul>
+
+          </nav>
+          <div class="event-list">
+            <h3>Event Type</h3>
+            <ul>
+              <li>Event 1</li>
+              <li>Event 2</li>
+              <li>Event 3</li>
+              <li>Event 4</li>
+              <li>Event 5</li>
+              <li>Event 6</li>
+              <li>Event 7</li>
+              <li>Event 8</li>
+              <li>Event 9</li>
+              <li>Event 10</li>
+            </ul>
+          </div>
+
+        </section>
+  </main>
+</body>
+</html>
