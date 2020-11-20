@@ -57,7 +57,7 @@ const conversationStarters = [
     ok_for_education: true,
     ok_for_work:true,
     ok_for_food:true,
-    ok_for_leisure: true
+    ok_for_leisure: true,
   },
   {
     id: 5,

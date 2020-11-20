@@ -28,7 +28,7 @@ This app is for two types of users: a visitor and a logged-in user
 #### Home Page 
 * As a logged-in user,
 * I want to be able to preview the content of the app,
-* so I can start looking conversation starters.
+* so I can start looking for conversation starters.
 
 #### Question Category Page
 * As a logged-in user,
@@ -69,11 +69,28 @@ Register Page
         * __Navbar.js__ (stateless) -
 
 ## 7. Back-end Structure - Business Objects (to do later)
-* (Example) Users (database table)
+* Users (database table)
     * id (auto-generated)
     * username (email validation)
     * password (at least 8 chars, at least one alpha and a special character validation)
-
+* Questions (database table)
+    * id (auto-generated)
+    * user_id (from users table)
+    * question (text)
+    * is_favorited (boolean default false)
+    * is_public (boolean default true)
+    * min_number_of_people (integer default = 1)
+    * ok_for_entertainment (boolean default true)
+    * ok_for_exercise (boolean default true)
+    * ok_for_travel (boolean default true)
+    * ok_for_technology (boolean default true)
+    * ok_for_fashion (boolean default true)
+    * ok_for_holidays (boolean default true)
+    * ok_for_education (boolean default true)
+    * ok_for_work (boolean default true)
+    * ok_for_food (boolean default true)
+    * ok_for_leisure (boolean default true)
+    
 
 ## 8. API Documentation (to do later)
 API Documentation details:
