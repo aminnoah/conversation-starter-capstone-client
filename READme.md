@@ -68,7 +68,7 @@ Register Page
             * __Register.js__ (stateful) -
         * __Navbar.js__ (stateless) -
 
-## 7. Back-end Structure - Business Objects (to do later)
+## 7. Back-end Structure - Business Objects (Done)
 * Users (database table)
     * id (auto-generated)
     * username (email validation)
