@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 import config from './config'
 import TokenService from './services/TokenServices'
 
@@ -24,127 +24,30 @@ class LandingPage extends React.Component {
         }
     }
 
-    //get the imput from the user
-    handleSearch = (e) => {
-        e.preventDefault()
-
-        //create an object to store the search filters
-        const data = {}
-
-        //get all the from data from the form component
-        const formData = new FormData(e.target)
-
-        //for each of the keys in form data populate it with form value
-        for (let value of formData) {
-            data[value[0]] = value[1]
-        }
-        //  lines 31-33 are critical to start 
-        console.log(data)
-
-        const { device_name, device_sn, wo_no } = data
-
-        console.log(device_name, device_sn, wo_no)
-
-        // 'select device' 'select S/N' 'select W/O' submitted form without anything selected.
-
-        if (device_name === 'select device') {
-            console.log('select device')
-            this.setState({
-                formValidationError: 'Please select a device!!'
-            })
-        }
-
-        else if (device_sn === 'select S/N') {
-            console.log('select S/N')
-            this.setState({
-                formValidationError: 'Please select a serial number!!'
-            })
-        }
-
-        else if (wo_no === 'select W/O') {
-            console.log('select W/O')
-            this.setState({
-                formValidationError: 'Please select a work order!!'
-            })
-        }
-        else {
-
-            //assigning the object from the form data to params in the state
-            this.setState({
-                params: data,
-                formValidationError: ''
-            })
-
-            //check if the state is populated with the search params data
-            console.log(this.state.params)
-
-            // create payload and send it across we left of here!!!!
-
-            const payload = {
-                device_name: data.device_name,
-                wo_no: data.wo_no,
-                device_sn: data.device_sn,
-                currentUserId: TokenService.getUserId()
-            };
-
-            console.log(payload)
-
-            const url = `${config.API_ENDPOINT}/create-dhr`;
-
-            fetch(url, {
-                method: "POST",
-                body: JSON.stringify(payload),
-                headers: {
-                    "content-type": "application/json",
-                },
-            })
-                .then((res) => {
-                    if (!res.ok) {
-                        return res.json().then((error) => {
-                            throw error;
-                        });
-                    }
-                    return res.json();
-                })
-                .then((data) => {
-                    // this.props.updateNote(data);
-                    alert('Post added!');
-                    window.location = '/dhr-report'
-                })
-
-                .catch((error) => {
-                    this.setState({ appError: error });
-                });
-        }
-
-
-
-    }
-
     render() {
         let showErrorOutput = ''
         if (this.state.formValidationError) {
-            showErrorOutput = <div className="alert alert-info">
-                <i className="fas fa-info"></i>
+            showErrorOutput = <div className='alert alert-info'>
+                <i className='fas fa-info'></i>
                 <strong>Info</strong>
                 {this.state.formValidationError}
             </div>
         }
-
         return (
-            <section className="landing-page">
-
-                <form className="select-product-form" onSubmit={this.handleSearch}>
-
-                    {showErrorOutput}
-
-                    <h1>Good Morning Jimmy Smith!</h1>
-
-                </form>
+            <section className='sign-in'>
+                <h1>Welcome to Convo-To-Go</h1>
+                <p>This application was created to fulfill the need to create conversation anywhere, anytime! How often do you find yourself in a place or at an event and can't find the words to start a conversation? This application, upon registration and login, allow you to pick from a number of event types and select the 'convo' that is best for your situation. So What are you waiting for? Go converse!</p>
+                    <div className='form-item'>
+                        <button className='myButton'
+                        ><Link to="/signin">Sign-In</Link></button>
+                    </div>
+                    <div className='form-item'>
+                        <button className='myButton'><Link to="/registration">Register</Link></button> 
+                    </div>
+            
             </section>
         )
     }
-
 }
 
 export default LandingPage

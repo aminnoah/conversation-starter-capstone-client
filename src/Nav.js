@@ -20,20 +20,20 @@ class navbar extends Component {
 
         return (
             <header className='clearfix'>
-                <h4>eDHR+</h4>
+                <h4>Convo-To-Go</h4>
                 {TokenService.hasAuthToken() ?
                     <nav className="nav">
                         <ul className='link'>
                             <li>
                                 <Link to="/landing">
                                     <i className="fas fa-question-circle"></i>
-                                    <span className='navlink-text'>Support Central</span>
+                                    <span className='navlink-text' alt='Support Central'>Support Central</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/dhr-report">
+                                <Link to="/create-convo">
                                     <i className="fas fa-plus-circle"></i>
-                                    <span className='navlink-text'>Create DHR</span>
+                                    <span className='navlink-text'>Create a Convo</span>
                                 </Link>
                             </li>
                             <li>

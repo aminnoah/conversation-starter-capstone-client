@@ -130,7 +130,7 @@ class Registration extends React.Component {
                 <form className="registration-form" onSubmit={this.handleSubmit}>
                     {showErrorOutput}
 
-                    <h1>DHR Registration</h1>
+                    <h1>Convo-To-Go Registration</h1>
 
                     <div className="form-item">
                         <label htmlFor="register-email">Email</label>
@@ -152,7 +152,7 @@ class Registration extends React.Component {
 
                     <div className="form-item">
                         <button type='submit' className="myButton" disabled={this.state.submitButtonDisabled}>Register</button>
-                        <p>Already have an account? <a href="/">Sign In</a></p>
+                        <p>Already have an account? <a href="/signin">Sign In</a></p>
                     </div>
                 </form>
             </section>

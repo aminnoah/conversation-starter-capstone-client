@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-
+import HomePage from './HomePage'
 import LandingPage from './LandingPage'
 import Registration from './Registration'
 import SignIn from './SignIn'
-import DhrReport from './DhrReport'
+import CreateConvo from './CreateConvo'
 import Nav from './Nav'
 import Error from './Error'
 
@@ -19,9 +19,10 @@ function App() {
                 <Nav />
                 <Switch>
                     {/* statis routes */}
-                    <Route exact path='/' component={SignIn} />
-                    <Route path='/landing' component={LandingPage} />
-                    <Route path='/dhr-report' component={DhrReport} />
+                    <Route exact path='/' component={LandingPage} />
+                    <Route exact path='/signin' component={SignIn} />
+                    <Route path='/homepage' component={HomePage} />
+                    <Route path='/create-convo' component={CreateConvo} />
                     <Route path='/registration' component={Registration} />
                     {/* error route */}
                     <Route component={Error} />

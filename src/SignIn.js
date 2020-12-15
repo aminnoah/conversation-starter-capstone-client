@@ -46,7 +46,7 @@ class SignIn extends React.Component {
                 password.value = ''
                 TokenService.saveAuthToken(response.authToken)
                 TokenService.saveUserId(response.userId)
-                window.location = '/landing'
+                window.location = '/homepage'
             })
             .then(response => {
                 console.log('response:', response)
@@ -73,7 +73,7 @@ class SignIn extends React.Component {
 
                     {showErrorOutput}
 
-                    <h1>DHR Sign-In</h1>
+                    <h1>Convo-To-Go Sign-In</h1>
 
                     <div className='form-item'>
                         <label htmlFor='sign-in-email'>Email</label>
