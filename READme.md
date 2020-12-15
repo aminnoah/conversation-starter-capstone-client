@@ -62,11 +62,17 @@ Register Page
 
 ## 6. Front-end Structure - React Components Map (to do later)
 * (Example) __Index.js__ (stateless)
-    * __App.js__ (stateful)
-        * __LandingPage.js__ (stateful) - gets the _"prop name"_ and the _"callback prop name"_ from the __App.js__
+    * __App.js__ (stateless) - contains router
+        * __LandingPage.js__ (stateful)
             * __Login.js__ (stateful) -
             * __Register.js__ (stateful) -
         * __Navbar.js__ (stateless) -
+        * __Homepage.js__ (stateful) -
+            * __CreateConvo.js__ (stateful) -
+            * __ListOfConvoEvents.js__ (stateful) -
+            * __FavoritedEvents.js__ (stateful) -
+            * __FavoritedConvos.js__ (stateful) -
+        * __SpecificEventConvoList.js__ (stateful) -
 
 ## 7. Back-end Structure - Business Objects (Done)
 * Users (database table)
