@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
 import config from './config'
 import TokenService from './services/TokenServices'
 
@@ -8,9 +8,8 @@ export default class HomePage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            params: {},
-            dataParams: {},
-            formValidationError: ''
+          convosInList: [],
+            error: ''
         }
     }
 
@@ -23,6 +22,21 @@ export default class HomePage extends React.Component {
         if (!TokenService.hasAuthToken()) {
             window.location = '/'
         }
+        const eventName = this.props.match.params.meta;
+        console.log(eventName)
+        let getConvosByUserAndEventListUrl = `${config.API_ENDPOINT}/items/user/${user_id}`;
+        console.log(getConvosByUserAndEventListUrl)
+        fetch(getConvosByUserAndEventListUrl)
+            .then((convosInList) => convosInList.json())
+            .then((convosInList) => {
+                console.log(convosInList)
+                this.setState({
+                  convosInList: convosInList,
+                });
+                // console.log(this.state);
+            })
+
+            .catch((error) => this.setState({ error }));
     }
     render() {
         let showErrorOutput = ''
@@ -48,8 +62,8 @@ export default class HomePage extends React.Component {
                         <div className='divTableBody'>
                             <div className='divTableRow'>
                                 <div className='divTableCell'>
-                                <Link to="/convo-event-list/education">Education</Link>
-                                </div>
+                                Education
+                                  </div>
                                 <div className='divTableCell'></div>
                             </div>
                             <div className='divTableRow'>

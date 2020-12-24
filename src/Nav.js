@@ -20,7 +20,7 @@ class navbar extends Component {
 
         return (
             <header className='clearfix'>
-                <h4>Convo-To-Go</h4>
+                <h4 path='/'>Convo-To-Go</h4>
                 {TokenService.hasAuthToken() ?
                     <nav className="nav">
                         <ul className='link'>

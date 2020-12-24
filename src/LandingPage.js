@@ -19,9 +19,9 @@ class LandingPage extends React.Component {
         console.log(currentUserId, currentUserToken)
         console.log(TokenService.hasAuthToken())
 
-        if (!TokenService.hasAuthToken()) {
-            window.location = '/'
-        }
+        // if (!TokenService.hasAuthToken()) {
+        //     window.location = '/'
+        // }
     }
 
     render() {

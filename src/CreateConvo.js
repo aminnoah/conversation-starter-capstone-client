@@ -10,15 +10,14 @@ class CreateConvo extends React.Component {
         this.state = {
             params: {},
             dataParams: {},
-            formValidationError: '',
-            intialDhrValues: {}
+            formValidationError: ''
         }
     }
 
     componentDidMount() {
-        let currentUserId = TokenService.getUserId()
+        let user_id = TokenService.getUserId()
         let currentUserToken = TokenService.getAuthToken()
-        console.log(currentUserId, currentUserToken)
+        console.log(user_id, currentUserToken)
         console.log(TokenService.hasAuthToken())
 
         if (!TokenService.hasAuthToken()) {
@@ -26,17 +25,21 @@ class CreateConvo extends React.Component {
         }
     }
 
+    handleInput() {}
+
+
+
     //enter assembly input from the user
     handleConvo = (e) => {
         e.preventDefault()
-        let currentUserId = TokenService.getUserId()
+        let user_id = TokenService.getUserId()
 
         //create an object to store the search filters
         const data = {}
 
         //get all the form data from the form component
         const formData = new FormData(e.target)
-
+        
         //for each of the keys in form data populate it with form value
         for (let value of formData) {
             data[value[0]] = value[1]
@@ -44,11 +47,16 @@ class CreateConvo extends React.Component {
 
         console.log(data)
 
-        const { convo_event_type, min_number_of_people, convo} = data
+        const { event_type, min_number_of_people, question, is_public} = data
+        
+        console.log(event_type)
 
-        console.log(convo_event_type, min_number_of_people, convo)
+        if (user_id !== 1 || user_id !== 2) {
+            console.log('This is a private convo')
+            data.is_public = false;
+        }
 
-        if (convo_event_type === 'Select Event Type') {
+        else if (event_type === 'Select Event Type') {
             console.log('Event Type not selected')
             this.setState({
                 formValidationError: ' Please select an Event Type !!'
@@ -57,18 +65,18 @@ class CreateConvo extends React.Component {
         else if (min_number_of_people === 'Select Minimum # of People') {
             console.log('How many people can you convo with?')
             this.setState({
-                formValidationError: ' Please select an Event Type !!'
+                formValidationError: ' Please select a number of people'
             })
         }
 
-        else if (convo === '') {
+        else if (question === '') {
             console.log('serial number not selected')
             this.setState({
                 formValidationError: ' Please select a serial number !!'
             })
         }
 
-        else {
+        //else {
             //assigning the object from the form data to params in the state
             this.setState({
                 params: data,
@@ -79,12 +87,69 @@ class CreateConvo extends React.Component {
             console.log(this.state.params)
 
             // create payload and send it across we left of here!!!!
+            let show_ok_for_fashion = false
+            if (event_type == 'Fashion') {
+                show_ok_for_fashion = true
+            }
+            let show_ok_for_entertainment = false
+            if (event_type == 'Entertainment') {
+                show_ok_for_entertainment = true
+            }
+            let show_ok_for_exercise = false
+            if (event_type == 'Exercise') {
+                show_ok_for_exercise = true
+            }
+            let show_ok_for_travel = false
+            if (event_type == 'Travel') {
+                show_ok_for_travel = true
+            }
+            let show_ok_for_technology = false
+            if (event_type == 'Technology') {
+                show_ok_for_technology = true
+            }
+            let show_ok_for_holidays = false
+            if (event_type == 'Holidays') {
+                show_ok_for_holidays = true
+            }
+            let show_ok_for_education = false
+            if (event_type == 'Education') {
+                show_ok_for_education = true
+            }
+            let show_ok_for_work = false
+            if (event_type == 'Work') {
+                show_ok_for_work = true
+            }
+            let show_ok_for_food = false
+            if (event_type == 'Food') {
+                show_ok_for_food = true
+            }
+            let show_ok_for_leisure = false
+            if (event_type == 'Leisure') {
+                show_ok_for_leisure = true
+            }
+            
+            
 
-            const payload = { convo_event_type, min_number_of_people, convo, currentUserId };
-
+            let payload = {
+                user_id,
+                question,
+                is_favorited: false,
+                is_public: false,
+                min_number_of_people,
+                ok_for_entertainment: show_ok_for_entertainment,
+                ok_for_exercise: show_ok_for_exercise,
+                ok_for_travel: show_ok_for_travel,
+                ok_for_technology: show_ok_for_technology,
+                ok_for_fashion: show_ok_for_fashion,
+                ok_for_holidays: show_ok_for_holidays,
+                ok_for_education: show_ok_for_education,
+                ok_for_work: show_ok_for_work,
+                ok_for_food: show_ok_for_food,
+                ok_for_leisure: show_ok_for_leisure
+                }
             console.log(payload)
 
-            const url = `${config.API_ENDPOINT}/createConvo`;
+            const url = `${config.API_ENDPOINT}/convos`;
 
             fetch(url, {
                 method: "POST",
@@ -94,6 +159,7 @@ class CreateConvo extends React.Component {
                 },
             })
                 .then((res) => {
+                    console.log(res)
                     if (!res.ok) {
                         return res.json().then((error) => {
                             throw error;
@@ -111,9 +177,10 @@ class CreateConvo extends React.Component {
                 })
 
                 .catch((error) => {
+                    console.log(error)
                     this.setState({ appError: error });
                 });
-        }
+        //}
 
 
 
@@ -134,7 +201,7 @@ class CreateConvo extends React.Component {
             <section className='create-convo clearfix'>
 
                 <h2>Create a Convo</h2>
-                <form className='equipment' onSubmit={this.handleAssembly}>
+                <form className='convo-details' onSubmit={this.handleConvo}>
                     <div className='divTable blueTable media'>
                         <div className='divTableHeading'>
                             <div className='divTableRow'>
@@ -146,7 +213,7 @@ class CreateConvo extends React.Component {
                         <div className='divTableBody'>
                             <div className='divTableRow'>
                                 <div className='divTableCell'>Convo Event Type</div>
-                                <select name="dmr_no" id="dmr_no" placeholder="Select Event Type">
+                                <select name="event_type" id="event_type" placeholder="Select Event Type">
                                     <option>Select Event Type</option>
                                     <option>Entertainment</option>
                                     <option>Exercise</option>
@@ -162,7 +229,7 @@ class CreateConvo extends React.Component {
                             </div>
                             <div className='divTableRow'>
                                 <div className='divTableCell'>Minimum Number of People</div>
-                                <select name="device_name" id="device_name">
+                                <select name="min_number_of_people" id="min_number_of_people">
                                 <option>Select Minimum # of People</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -171,7 +238,9 @@ class CreateConvo extends React.Component {
                             </div>
                             <div className='divTableRow'>
                                 <div className='divTableCell'>What's your Convo?</div>
-                                <input type="text" placeholder="Enter Convo"></input>
+                                <input type="text" placeholder="Enter Convo"
+                                name="question"
+                                id="question"></input>
                             </div>
                         </div>
                     </div>
