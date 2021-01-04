@@ -24,7 +24,7 @@ export default class HomePage extends React.Component {
         }
         const eventName = this.props.match.params.meta;
         console.log(eventName)
-        let getConvosByUserAndEventListUrl = `${config.API_ENDPOINT}/items/user/${user_id}`;
+        let getConvosByUserAndEventListUrl = `${config.API_ENDPOINT}/convos/by-user-end-list-type/${user_id}/${eventName}`;
         console.log(getConvosByUserAndEventListUrl)
         fetch(getConvosByUserAndEventListUrl)
             .then((convosInList) => convosInList.json())
@@ -39,6 +39,44 @@ export default class HomePage extends React.Component {
             .catch((error) => this.setState({ error }));
     }
     render() {
+
+        const capitalize = (s) => {
+            if (typeof s !== 'string') return ''
+            return s.charAt(0).toUpperCase() + s.slice(1)
+          }
+        // console.log(this.state.convosInList.length)
+        let showItemsPage = ''
+        //by default show there are no items
+        if (this.state.convosInList.length === 0) {
+            showItemsPage = <p>No items here</p>
+        }
+        // if there are items 
+        else {
+
+            // display details for each one of the items
+            showItemsPage = this.state.convosInList.map((item, key) => {
+                if (item) {
+                    return (
+                    <div className='divTableBody'>    
+                    <div className='divTableRow' key = {key}> 
+                        <div className='divTableCell'>
+                            <div>{item.question} </div>
+                        </div>
+                      
+                        <div className='divTableCell'>
+                            <div>{item.min_number_of_people} </div>
+                            <div>{item.is_favorited} </div>
+                            <div>{item.is_public} </div>
+                        </div>
+                    </div>
+                    </div>
+                    )
+                }
+            })
+        }
+
+        const eventName = capitalize(this.props.match.params.meta);
+        //for (let i = 0; i < )
         let showErrorOutput = ''
         if (this.state.formValidationError) {
             showErrorOutput = <div className='alert alert-info'>
@@ -50,60 +88,20 @@ export default class HomePage extends React.Component {
         return (
             <section className='create-convo clearfix'>
 
-                <h2>Home Page</h2>
+                <h2>{eventName} Convos</h2>
                 <div className='divTable blueTable media'>
                         <div className='divTableHeading'>
                             <div className='divTableRow'>
-                                <div className='divTableHead'>Convo Events</div>
-                                <div className='divTableHead'>Created Convos</div>
+                                <div className='divTableHead'>
+                                    {eventName}
+                                </div>
+                                <div className='divTableHead'>
+                                    Minimum Number of People
+                                </div>
                             </div>
                         </div>
-                        
-                        <div className='divTableBody'>
-                            <div className='divTableRow'>
-                                <div className='divTableCell'>
-                                Education
-                                  </div>
-                                <div className='divTableCell'></div>
-                            </div>
-                            <div className='divTableRow'>
-                                <div className='divTableCell'>Entertainment</div>
-                                <div className='divTableCell'></div>
-                            </div>
-                            <div className='divTableRow'>
-                                <div className='divTableCell'>Exercise</div>
-                                <div className='divTableCell'></div>
-                            </div>
-                            <div className='divTableRow'>
-                                <div className='divTableCell'>Fashion</div>
-                                <div className='divTableCell'></div>
-                            </div>
-                            <div className='divTableRow'>
-                                <div className='divTableCell'>Food</div>
-                                <div className='divTableCell'></div>
-                            </div>
-                            <div className='divTableRow'>
-                                <div className='divTableCell'>Holidays</div>
-                                <div className='divTableCell'></div>
-                            </div>
-                            <div className='divTableRow'>
-                                <div className='divTableCell'>Leisure</div>
-                                <div className='divTableCell'></div>
-                            </div>
-                            <div className='divTableRow'>
-                                <div className='divTableCell'>Technology</div>
-                                <div className='divTableCell'></div>
-                            </div>
-                            <div className='divTableRow'>
-                                <div className='divTableCell'>Travel</div>
-                                <div className='divTableCell'></div>
-                            </div>
-                            <div className='divTableRow'>
-                                <div className='divTableCell'>Work</div>
-                                <div className='divTableCell'></div>
-                            </div>
-                        </div>
-                    </div>
+                       {showItemsPage}    
+                </div>
 
                 {showErrorOutput}
                 

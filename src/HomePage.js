@@ -8,8 +8,7 @@ export default class HomePage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            params: {},
-            dataParams: {},
+            privateConvos: [],
             formValidationError: ''
         }
     }
@@ -41,7 +40,7 @@ export default class HomePage extends React.Component {
                         <div className='divTableHeading'>
                             <div className='divTableRow'>
                                 <div className='divTableHead'>Convo Events</div>
-                                <div className='divTableHead'>Created Convos</div>
+                                {/* <div className='divTableHead'>Created Convos</div> */}
                             </div>
                         </div>
                         
@@ -50,43 +49,80 @@ export default class HomePage extends React.Component {
                                 <div className='divTableCell'>
                                 <Link to="/convo-event-list/education">Education</Link>
                                 </div>
-                                <div className='divTableCell'></div>
+                                {/* <div className='divTableCell'></div> */}
                             </div>
                             <div className='divTableRow'>
-                                <div className='divTableCell'>Entertainment</div>
-                                <div className='divTableCell'></div>
+                                <div className='divTableCell'>
+                                <Link to="/convo-event-list/entertainment">
+                                    Entertainment
+                                    </Link>
+                                </div>
+                                {/* <div className='divTableCell'>
+
+                                </div> */}
                             </div>
                             <div className='divTableRow'>
-                                <div className='divTableCell'>Exercise</div>
-                                <div className='divTableCell'></div>
+                                <div className='divTableCell'>
+                                    <Link to="/convo-event-list/exercise">
+                                        Exercise
+                                    </Link>    
+                                    </div>
+                                {/* <div className='divTableCell'></div> */}
                             </div>
                             <div className='divTableRow'>
-                                <div className='divTableCell'>Fashion</div>
-                                <div className='divTableCell'></div>
+                                <div className='divTableCell'>
+                                <Link to="/convo-event-list/fashion">
+                                    Fashion
+                                </Link>    
+                                </div>
+                                {/* <div className='divTableCell'></div> */}
                             </div>
                             <div className='divTableRow'>
-                                <div className='divTableCell'>Food</div>
-                                <div className='divTableCell'></div>
+                                <div className='divTableCell'>
+                                <Link to="/convo-event-list/food">
+                                    Food
+                                </Link>    
+                                </div>
+                                {/* <div className='divTableCell'></div> */}
                             </div>
                             <div className='divTableRow'>
-                                <div className='divTableCell'>Holidays</div>
-                                <div className='divTableCell'></div>
+                                <div className='divTableCell'>
+                                <Link to="/convo-event-list/holidays">
+                                    Holidays
+                                </Link>
+                                </div>
+                                {/* <div className='divTableCell'></div> */}
                             </div>
                             <div className='divTableRow'>
-                                <div className='divTableCell'>Leisure</div>
-                                <div className='divTableCell'></div>
+                                <div className='divTableCell'>
+                                <Link to="/convo-event-list/leisure">
+                                Leisure</Link>
+                                </div>
+                                {/* <div className='divTableCell'></div> */}
                             </div>
                             <div className='divTableRow'>
-                                <div className='divTableCell'>Technology</div>
-                                <div className='divTableCell'></div>
+                                <div className='divTableCell'>
+                                <Link to="/convo-event-list/technology">
+                                    Technology
+                                    </Link>
+                                    </div>
+                                {/* <div className='divTableCell'></div> */}
                             </div>
                             <div className='divTableRow'>
-                                <div className='divTableCell'>Travel</div>
-                                <div className='divTableCell'></div>
+                                <div className='divTableCell'>
+                                <Link to="/convo-event-list/travel">    
+                                    Travel
+                                    </Link>
+                                    </div>
+                                {/* <div className='divTableCell'></div> */}
                             </div>
                             <div className='divTableRow'>
-                                <div className='divTableCell'>Work</div>
-                                <div className='divTableCell'></div>
+                                <div className='divTableCell'>
+                                <Link to="/convo-event-list/work">
+                                    Work
+                                    </Link>
+                                    </div>
+                                {/* <div className='divTableCell'></div> */}
                             </div>
                         </div>
                     </div>

@@ -2,7 +2,7 @@
 This application helps users to prepare and initiate conversations in a wide variety of settings. It provides the user with a set list of events or environments, and based on their input, they will receive a number of relevant questions and conversation starters. New users or visitors will have the ability to access the pre-existing conversation starters. Upon log in, users can input suggestions for new questions and events.
 
 ## 1. Working Prototype (to do later)
-(Example) You can access a working prototype of the React app here: https://my-app-client.herokuapp.com/ and Node app here: https://my-app-server.herokuapp.com/
+You can access a working prototype of the React app here: https://convo-to-go-client.vercel.app/ and Node app here: https://convo-to-go-server.herokuapp.com/
 
 
 ## 2. User Stories (done)

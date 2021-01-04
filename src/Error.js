@@ -20,7 +20,9 @@ class Error extends React.Component {
             <div className='error'>
                 {TokenService.hasAuthToken() ?
                     <div>
-                        <h6>Wrong path my man!</h6>
+                        <h6>
+                            Whoa where are you going?
+                        </h6>
                     </div>
                     :
                     <div>
