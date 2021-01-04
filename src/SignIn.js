@@ -74,6 +74,7 @@ class SignIn extends React.Component {
                     {showErrorOutput}
 
                     <h1>Convo-To-Go Sign-In</h1>
+                    <div>demo credentials username:demo_user password: password </div>
 
                     <div className='form-item'>
                         <label htmlFor='sign-in-email'>Email</label>

@@ -64,7 +64,7 @@ class Registration extends React.Component {
                 repeatPassword.value = ''
                 TokenService.saveAuthToken(response.authToken)
                 TokenService.saveUserId(response.id)
-                window.location = '/landing'
+                window.location = '/homepage'
             })
             .catch(res => {
                 this.setState({ error: res.error })
