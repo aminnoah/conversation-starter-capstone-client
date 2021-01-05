@@ -16,8 +16,6 @@ export default class HomePage extends React.Component {
     componentDidMount() {
         let user_id = TokenService.getUserId()
         let currentUserToken = TokenService.getAuthToken()
-        console.log(user_id, currentUserToken)
-        console.log(TokenService.hasAuthToken())
 
         if (!TokenService.hasAuthToken()) {
             window.location = '/'

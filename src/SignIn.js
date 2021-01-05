@@ -34,7 +34,7 @@ class SignIn extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault() 
         const { userName, password } = event.target
-        console.log('username:', userName.value, 'password:', password.value) 
+  
         AuthApiService.postLogin({
             user_name: userName.value,
             password: password.value,

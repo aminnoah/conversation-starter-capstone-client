@@ -17,8 +17,7 @@ class CreateConvo extends React.Component {
     componentDidMount() {
         let user_id = TokenService.getUserId()
         let currentUserToken = TokenService.getAuthToken()
-        console.log(user_id, currentUserToken)
-        console.log(TokenService.hasAuthToken())
+        
 
         if (!TokenService.hasAuthToken()) {
             window.location = '/'
@@ -45,11 +44,11 @@ class CreateConvo extends React.Component {
             data[value[0]] = value[1]
         }
 
-        console.log(data)
+       
 
         const { event_type, min_number_of_people, question, is_public} = data
         
-        console.log(event_type)
+        
 
         if (user_id !== 1 || user_id !== 2) {
             console.log('This is a private convo')
@@ -84,7 +83,7 @@ class CreateConvo extends React.Component {
             })
 
             //check if the state is populated with the search params data
-            console.log(this.state.params)
+            //console.log(this.state.params)
 
             // create payload and send it across we left of here!!!!
             let show_ok_for_fashion = false
@@ -147,7 +146,7 @@ class CreateConvo extends React.Component {
                 ok_for_food: show_ok_for_food,
                 ok_for_leisure: show_ok_for_leisure
                 }
-            console.log(payload)
+        
 
             const url = `${config.API_ENDPOINT}/convos`;
 
@@ -159,7 +158,7 @@ class CreateConvo extends React.Component {
                 },
             })
                 .then((res) => {
-                    console.log(res)
+                   
                     if (!res.ok) {
                         return res.json().then((error) => {
                             throw error;
@@ -168,9 +167,9 @@ class CreateConvo extends React.Component {
                     return res.json();
                 })
                 .then((data) => {
-                    console.log(data)
+                    
                     this.setState({ ConvoValues: data })
-                    console.log(this.state)
+                    
                     // this.props.updateNote(data);
                     // alert('Post added!');
                     // window.location = '/create-convo'

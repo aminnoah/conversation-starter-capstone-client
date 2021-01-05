@@ -16,24 +16,22 @@ export default class HomePage extends React.Component {
     componentDidMount() {
         let user_id = TokenService.getUserId()
         let currentUserToken = TokenService.getAuthToken()
-        console.log(user_id, currentUserToken)
-        console.log(TokenService.hasAuthToken())
+        
 
         if (!TokenService.hasAuthToken()) {
             window.location = '/'
         }
         const eventName = this.props.match.params.meta;
-        console.log(eventName)
+   
         let getConvosByUserAndEventListUrl = `${config.API_ENDPOINT}/convos/by-user-end-list-type/${user_id}/${eventName}`;
-        console.log(getConvosByUserAndEventListUrl)
+        
         fetch(getConvosByUserAndEventListUrl)
             .then((convosInList) => convosInList.json())
             .then((convosInList) => {
-                console.log(convosInList)
                 this.setState({
                   convosInList: convosInList,
                 });
-                // console.log(this.state);
+
             })
 
             .catch((error) => this.setState({ error }));
