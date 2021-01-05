@@ -1,11 +1,11 @@
-# Convo-To-Go-App (done)
+# Convo-To-Go-App 
 This application helps users to prepare and initiate conversations in a wide variety of settings. It provides the user with a set list of events or environments, and based on their input, they will receive a number of relevant questions and conversation starters. New users or visitors will have the ability to access the pre-existing conversation starters. Upon log in, users can input suggestions for new questions and events.
 
-## 1. Working Prototype (to do later)
+## 1. Working Prototype 
 You can access a working prototype of the React app here: https://convo-to-go-client.vercel.app/ and Node app here: https://convo-to-go-server.herokuapp.com/
 
 
-## 2. User Stories (done)
+## 2. User Stories
 This app is for two types of users: a visitor and a logged-in user
 
 
@@ -41,26 +41,28 @@ This app is for two types of users: a visitor and a logged-in user
 * so that I can access those suggestions.
 
 
-## 3. Functionality (to do now)
+## 3. Functionality 
 The app's functionality includes:
 * Every User has the ability to create an account
-* Every User has the ability to search for 
+* Every User has the ability to create a convo 
 
 
 
-## 4. Technology (done)
+## 4. Technology 
 * Front-End: HTML5, CSS3, JavaScript ES6, React
 * Back-End: Node.js, Express.js, Mocha, Chai, RESTful API Endpoints, Postgres
 * Development Environment: Heroku, DBeaver
 
-### 5. Wireframes (to do now)
+### 5. Wireframes 
 (Example) Landing Page
 :-------------------------:
-![Landing Page](/github-images/wireframes/landing-page-wireframe.png)
+![Landing Page](/screenshots/landing-page.png)
 Register Page
-![Register Page](/github-images/wireframes/register-page-wireframe.png)
+![Register Page](/screenshots/sign-up.png)
+Login Page
+![Log In Page](/screenshots/log-in.png)
 
-## 6. Front-end Structure - React Components Map (to do later)
+## 6. Front-end Structure - React Components Map 
 * (Example) __Index.js__ (stateless)
     * __App.js__ (stateless) - contains router
         * __LandingPage.js__ (stateful)
@@ -74,7 +76,7 @@ Register Page
             * __FavoritedConvos.js__ (stateful) -
         * __SpecificEventConvoList.js__ (stateful) -
 
-## 7. Back-end Structure - Business Objects (Done)
+## 7. Back-end Structure - Business Objects 
 * Users (database table)
     * id (auto-generated)
     * username (email validation)
@@ -104,18 +106,13 @@ API Documentation details:
 
 
 
-## Screenshots (to do later)
-(Example) Landing Page
-:-------------------------:
-![Landing Page](/github-images/screenshots/landing-page-screenshot.png)
-Register Page
-![Register Page](/github-images/screenshots/register-page-screenshot.png)
 
-## Development Roadmap (to do later)
+
+## Development Roadmap 
 This is v1.0 of the app, but future enhancements are expected to include:
 * (Example) add more functionality
 
-## How to run it (done)
+## How to run it 
 Use command line to navigate into the project folder and run the following in terminal
 
 ### Local React scripts
