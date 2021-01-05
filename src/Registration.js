@@ -140,7 +140,7 @@ class Registration extends React.Component {
 
                     <div className="form-item">
                         <label htmlFor="register-password">Password</label>
-                        <input name='password' type="text" placeholder="password" id="register-password" onChange={e => this.changePassword(e.target.value)} required />
+                        <input name='password' type="password" placeholder="password" id="register-password" onChange={e => this.changePassword(e.target.value)} required />
                         {this.state.password.touched && (<ValidationError message={this.validatePassword()} />)}
                     </div>
 

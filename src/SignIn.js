@@ -74,7 +74,9 @@ class SignIn extends React.Component {
                     {showErrorOutput}
 
                     <h1>Convo-To-Go Sign-In</h1>
-                    <div>demo credentials username:demo_user password: password </div>
+                    <h3>Demo credentials</h3> 
+                    <h3>username:demo_user</h3>
+                    <h3>password: password</h3>
 
                     <div className='form-item'>
                         <label htmlFor='sign-in-email'>Email</label>
@@ -83,7 +85,7 @@ class SignIn extends React.Component {
 
                     <div className='form-item'>
                         <label htmlFor='sign-in-password'>Password</label>
-                        <input name='password' type='text' placeholder='password' onChange={e => this.changePassword(e.target.value)} required id='sign-in-password' />
+                        <input name='password' type='password' placeholder='password' onChange={e => this.changePassword(e.target.value)} required id='sign-in-password' />
                     </div>
 
                     <div className='form-item'>

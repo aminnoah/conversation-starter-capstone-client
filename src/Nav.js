@@ -33,16 +33,16 @@ class navbar extends Component {
                             <li>
                                 <Link to="/create-convo">
                                     <i className="fas fa-plus-circle"></i>
-                                    <span className='navlink-text'>Create a Convo</span>
+                                    <span className='navlink-text' alt='Create a Convo'>Create a Convo</span>
                                 </Link>
                             </li>
-                            {/* <li>
+                            <li>
 
-                                <Link to="/defect-log">
+                                <Link to="/homepage">
                                     <i className="fas fa-edit"></i>
-                                    <span className='navlink-text'>Log Defect</span>
+                                    <span className='navlink-text'>HomePage</span>
                                 </Link>
-                            </li> */}
+                            </li>
                             <li>
                                 <Link to="/" onClick={this.logOutClick}>
                                     <i className="fas fa-sign-out-alt"></i>
