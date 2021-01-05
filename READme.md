@@ -100,7 +100,7 @@ Login Page
     * ok_for_leisure (boolean default true)
     
 
-## 8. API Documentation (to do later)
+## 8. API Documentation 
 API Documentation details:
 * (Example) get all users
 
