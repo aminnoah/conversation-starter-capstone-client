@@ -4,7 +4,7 @@ import config from './config'
 import TokenService from './services/TokenServices'
 
 
-export default class HomePage extends React.Component {
+export default class ConvoEventList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -55,8 +55,8 @@ export default class HomePage extends React.Component {
             showItemsPage = this.state.convosInList.map((item, key) => {
                 if (item) {
                     return (
-                    <div className='divTableBody'>    
-                    <div className='divTableRow' key = {key}> 
+                    <div className='divTableBody' key = {key}>    
+                    <div className='divTableRow'> 
                         <div className='divTableCell'>
                             <div>{item.question} </div>
                         </div>

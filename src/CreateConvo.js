@@ -46,39 +46,46 @@ class CreateConvo extends React.Component {
 
        
 
-        const { event_type, min_number_of_people, question, is_public} = data
+        let { event_type, min_number_of_people, question, is_public} = data
         
         
-
-        if (user_id !== 1 || user_id !== 2) {
-            console.log('This is a private convo')
-            data.is_public = false;
+        console.log(user_id)
+        if (user_id == 1 || user_id == 2) {
+            console.log('This is a public convo')
+            is_public = true;
         }
+        
+        else {is_public = false}
 
-        else if (event_type === 'Select Event Type') {
+        if (event_type === 'Select Event Type') {
             console.log('Event Type not selected')
             this.setState({
                 formValidationError: ' Please select an Event Type !!'
             })
         }
-        else if (min_number_of_people === 'Select Minimum # of People') {
+        if (min_number_of_people === 'Select Minimum # of People') {
             console.log('How many people can you convo with?')
             this.setState({
                 formValidationError: ' Please select a number of people'
             })
         }
 
-        else if (question === '') {
-            console.log('serial number not selected')
+        if (question === '') {
+            console.log('Question not entered')
             this.setState({
-                formValidationError: ' Please select a serial number !!'
+                formValidationError: ' Please enter a question '
             })
         }
 
+        let payloadTwo = {
+            event_type, min_number_of_people, question, is_public
+        }
+        
+        console.log(payloadTwo)
         //else {
             //assigning the object from the form data to params in the state
             this.setState({
-                params: data,
+                params: payloadTwo,
                 formValidationError: ''
             })
 
@@ -133,7 +140,7 @@ class CreateConvo extends React.Component {
                 user_id,
                 question,
                 is_favorited: false,
-                is_public: false,
+                is_public: is_public,
                 min_number_of_people,
                 ok_for_entertainment: show_ok_for_entertainment,
                 ok_for_exercise: show_ok_for_exercise,
@@ -146,7 +153,7 @@ class CreateConvo extends React.Component {
                 ok_for_food: show_ok_for_food,
                 ok_for_leisure: show_ok_for_leisure
                 }
-        
+                console.log(payload)
 
             const url = `${config.API_ENDPOINT}/convos`;
 
