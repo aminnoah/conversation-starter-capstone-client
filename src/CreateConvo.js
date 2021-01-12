@@ -252,7 +252,11 @@ class CreateConvo extends React.Component {
                     </div>
                     <div className='fullWidth'>
                         <div className='buttonWrapper clearfix'>
-                            <button type='submit' className='myButton'>Create Convo</button>
+                        <Link to="/homepage">
+                            <button type='submit' className='myButton'>
+                                Create Convo
+                            </button>
+                        </Link>
                         </div>
                     </div>
                 </form>
