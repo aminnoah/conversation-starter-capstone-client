@@ -95,7 +95,7 @@ class Registration extends React.Component {
         const repeatPassword = this.state.repeatPassword.value.trim();
         const password = this.state.password.value.trim();
         // this.setState({submitButtonDisabled: 'disabled'});
-        if (repeatPassword != password) {
+        if (repeatPassword !== password) {
             return <p className='input-error'>Passwords do not match</p>;
         }
         // else {

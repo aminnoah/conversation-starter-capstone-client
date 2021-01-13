@@ -49,7 +49,6 @@ class CreateConvo extends React.Component {
         let { event_type, min_number_of_people, question, is_public} = data
         
         
-        console.log(user_id)
         if (user_id == 1 || user_id == 2) {
             console.log('This is a public convo')
             is_public = true;
@@ -81,7 +80,7 @@ class CreateConvo extends React.Component {
             event_type, min_number_of_people, question, is_public
         }
         
-        console.log(payloadTwo)
+       
         //else {
             //assigning the object from the form data to params in the state
             this.setState({
@@ -153,7 +152,7 @@ class CreateConvo extends React.Component {
                 ok_for_food: show_ok_for_food,
                 ok_for_leisure: show_ok_for_leisure
                 }
-                console.log(payload)
+                
 
             const url = `${config.API_ENDPOINT}/convos`;
 
@@ -197,6 +196,7 @@ class CreateConvo extends React.Component {
     render() {
         let showErrorOutput = ''
         if (this.state.formValidationError) {
+            console.log(this.state.formValidationError)
             showErrorOutput = <div className='alert alert-info'>
                 <i className='fas fa-info'></i>
                 <strong>Info</strong>
