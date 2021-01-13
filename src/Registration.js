@@ -58,7 +58,7 @@ class Registration extends React.Component {
         })
 
             .then(response => {
-                console.log('user:', response)
+    
                 userName.value = ''
                 password.value = ''
                 repeatPassword.value = ''

@@ -42,7 +42,7 @@ export default class ConvoEventList extends React.Component {
             if (typeof s !== 'string') return ''
             return s.charAt(0).toUpperCase() + s.slice(1)
           }
-        // console.log(this.state.convosInList.length)
+        
         let showItemsPage = ''
         //by default show there are no items
         if (this.state.convosInList.length === 0) {

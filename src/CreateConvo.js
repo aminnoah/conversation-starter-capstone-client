@@ -69,7 +69,7 @@ class CreateConvo extends React.Component {
             })
         }
 
-        if (question === '') {
+        if (question.trim().length === 0) {
             console.log('Question not entered')
             this.setState({
                 formValidationError: ' Please enter a question '
@@ -83,13 +83,13 @@ class CreateConvo extends React.Component {
        
         //else {
             //assigning the object from the form data to params in the state
-            this.setState({
-                params: payloadTwo,
-                formValidationError: ''
-            })
+            // this.setState({
+            //     params: payloadTwo,
+            //     formValidationError: ''
+            // })
 
             //check if the state is populated with the search params data
-            //console.log(this.state.params)
+            
 
             // create payload and send it across we left of here!!!!
             let show_ok_for_fashion = false
@@ -177,9 +177,10 @@ class CreateConvo extends React.Component {
                     this.setState({ ConvoValues: data })
                     
                     // this.props.updateNote(data);
-                    // alert('Post added!');
-                    // window.location = '/create-convo'
+                    //alert('Post added!');
+                    // window.location = '/homepage'
                 })
+                
 
                 .catch((error) => {
                     console.log(error)
@@ -194,18 +195,20 @@ class CreateConvo extends React.Component {
 
 
     render() {
-        let showErrorOutput = ''
+        let showErrorOutput;
         if (this.state.formValidationError) {
-            console.log(this.state.formValidationError)
+            
             showErrorOutput = <div className='alert alert-info'>
                 <i className='fas fa-info'></i>
                 <strong>Info</strong>
                 {this.state.formValidationError}
             </div>
+            
+            //return showErrorOutput;
         }
         return (
             <section className='create-convo clearfix'>
-
+                {showErrorOutput}
                 <h2>Create a Convo</h2>
                 <form className='convo-details' onSubmit={this.handleConvo}>
                     <div className='divTable blueTable media'>
@@ -239,7 +242,6 @@ class CreateConvo extends React.Component {
                                 <option>Select Minimum # of People</option>
                                 <option>1</option>
                                 <option>2</option>
-                                <option>3+</option>
                                 </select>
                             </div>
                             <div className='divTableRow'>
@@ -258,8 +260,7 @@ class CreateConvo extends React.Component {
                         </div>
                     </div>
                 </form>
-                {showErrorOutput}
-                
+                <button className='myButton'><a href="/homepage">Homepage</a></button>
             </section>
         )
     }

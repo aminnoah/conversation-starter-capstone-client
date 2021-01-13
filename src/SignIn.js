@@ -41,7 +41,7 @@ class SignIn extends React.Component {
         })
 
             .then(response => {
-                console.log('response ID', response)
+                
                 userName.value = ''
                 password.value = ''
                 TokenService.saveAuthToken(response.authToken)
