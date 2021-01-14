@@ -10,7 +10,8 @@ class CreateConvo extends React.Component {
         this.state = {
             params: {},
             dataParams: {},
-            formValidationError: ''
+            formValidationError: '',
+            formValidated: ''
         }
     }
 
@@ -31,6 +32,10 @@ class CreateConvo extends React.Component {
     //enter assembly input from the user
     handleConvo = (e) => {
         e.preventDefault()
+
+        this.setState({formValidationError: ''})
+        this.setState({formValidated: ''})
+
         let user_id = TokenService.getUserId()
 
         //create an object to store the search filters
@@ -61,12 +66,14 @@ class CreateConvo extends React.Component {
             this.setState({
                 formValidationError: ' Please select an Event Type !!'
             })
+            return
         }
         if (min_number_of_people === 'Select Minimum # of People') {
             console.log('How many people can you convo with?')
             this.setState({
                 formValidationError: ' Please select a number of people'
             })
+            return
         }
 
         if (question.trim().length === 0) {
@@ -74,7 +81,9 @@ class CreateConvo extends React.Component {
             this.setState({
                 formValidationError: ' Please enter a question '
             })
+            return
         }
+
 
         let payloadTwo = {
             event_type, min_number_of_people, question, is_public
@@ -175,6 +184,7 @@ class CreateConvo extends React.Component {
                 .then((data) => {
                     
                     this.setState({ ConvoValues: data })
+                    this.setState({formValidated: 'Convo Created!'})
                     
                     // this.props.updateNote(data);
                     //alert('Post added!');
@@ -196,6 +206,7 @@ class CreateConvo extends React.Component {
 
     render() {
         let showErrorOutput;
+        let showValidateOutput;
         if (this.state.formValidationError) {
             
             showErrorOutput = <div className='alert alert-info'>
@@ -206,9 +217,20 @@ class CreateConvo extends React.Component {
             
             //return showErrorOutput;
         }
+        if (this.state.formValidated) {
+            
+            showValidateOutput = <div className='alert alert-info'>
+                <i className='fas fa-info'></i>
+                <strong>Info</strong>
+                {this.state.formValidated}
+            </div>
+            
+            //return showErrorOutput;
+        }
         return (
             <section className='create-convo clearfix'>
                 {showErrorOutput}
+                {showValidateOutput}
                 <h2>Create a Convo</h2>
                 <form className='convo-details' onSubmit={this.handleConvo}>
                     <div className='divTable blueTable media'>
