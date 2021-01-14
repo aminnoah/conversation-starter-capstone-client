@@ -55,21 +55,19 @@ class CreateConvo extends React.Component {
         
         
         if (user_id == 1 || user_id == 2) {
-            console.log('This is a public convo')
+            
             is_public = true;
         }
         
         else {is_public = false}
 
         if (event_type === 'Select Event Type') {
-            console.log('Event Type not selected')
             this.setState({
                 formValidationError: ' Please select an Event Type !!'
             })
             return
         }
         if (min_number_of_people === 'Select Minimum # of People') {
-            console.log('How many people can you convo with?')
             this.setState({
                 formValidationError: ' Please select a number of people'
             })
@@ -77,7 +75,6 @@ class CreateConvo extends React.Component {
         }
 
         if (question.trim().length === 0) {
-            console.log('Question not entered')
             this.setState({
                 formValidationError: ' Please enter a question '
             })
@@ -193,7 +190,6 @@ class CreateConvo extends React.Component {
                 
 
                 .catch((error) => {
-                    console.log(error)
                     this.setState({ appError: error });
                 });
         //}

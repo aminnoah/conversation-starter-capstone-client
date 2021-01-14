@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 class navbar extends Component {
 
     logOutClick = () => {
-        console.log('Logging out')
         TokenService.clearAuthToken()
         TokenService.getUserId = (id) => {
             console.log(id)

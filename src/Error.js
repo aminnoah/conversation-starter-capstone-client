@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 class Error extends React.Component {
 
     logOutClick = () => {
-        console.log('Logging out')
         TokenService.clearAuthToken()
         TokenService.getUserId = (id) => {
             console.log(id)
